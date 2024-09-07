@@ -8,6 +8,9 @@ const nextConfig = {
       {
         hostname: 'firebasestorage.googleapis.com',
       },
+      {
+        hostname: 'res.cloudinary.com',
+      },
     ],
   },
 }

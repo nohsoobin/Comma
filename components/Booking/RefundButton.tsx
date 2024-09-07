@@ -5,6 +5,7 @@ import { BookingType } from '@/interface'
 import Modal from '../Modal'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
 
 interface RefundProps {
   booking: BookingType
@@ -40,6 +41,16 @@ export default function RefundButton({ booking, canRefund }: RefundProps) {
 
   return (
     <>
+      <PayPalScriptProvider
+        options={{
+          clientId:
+            'AQQMOvSjXVQpbgMabqrY5aXp3roWjXgZDCb6JUv0i3olvzWdXAmGShcsug4fJXTVIO-BxRkwsOxV6TAc',
+        }}
+      >
+        <div className="justify-center">
+          <PayPalButtons />
+        </div>
+      </PayPalScriptProvider>
       <section className="flex flex-col gap-4">
         {booking?.status === 'CANCEL' || isRefund ? (
           <button
@@ -63,11 +74,9 @@ export default function RefundButton({ booking, canRefund }: RefundProps) {
         <div className="flex flex-col gap-2 mt-4">
           <h1 className="text-lg font-semibold">예약을 취소 하시겠습니까?</h1>
           <p className="text-gray-600">
-            예약을 취소하면 재예약이 어려울 수 있습니다.
-            <br />
-            환불금은 예약 취소 후 2~3일 내에 결제한 카드로 입금됩니다.
-            <br />
-            동의하시는 경우에만 아래 버튼을 눌러 예약을 취소하세요.
+            예약을 취소하면 재예약이 어려울 수 있습니다. 환불금은 예약 취소 후
+            2~3일 내에 결제한 카드로 입금됩니다. 동의하시는 경우에만 아래 버튼을
+            눌러 예약을 취소하세요.
           </p>
           <button
             type="button"

@@ -83,7 +83,7 @@ export default function UserEditPage() {
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
               <label
-                htmlFor="first-name"
+                htmlFor="name"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 이름
@@ -102,7 +102,7 @@ export default function UserEditPage() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="last-name"
+                htmlFor="phone"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 전화번호
@@ -142,7 +142,7 @@ export default function UserEditPage() {
             <input name="id" value={user.id} className="hidden" readOnly />
             <div className="col-span-full">
               <label
-                htmlFor="street-address"
+                htmlFor="address"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 주소
